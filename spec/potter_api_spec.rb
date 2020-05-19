@@ -14,9 +14,13 @@ describe "As a user" do
     within '.members-list' do
       within first('.member') do
         expect(page).to have_content('Name:')
-        expect(page).to have_content('Role:')
+        if page.has_content?('Role:')
+          expect(page).to have_content('Role:')
+        end
         expect(page).to have_content('House:')
-        expect(page).to have_content('Patronus:')
+        if page.has_content?('Patronus:')
+          expect(page).to have_content('Patronus:')
+        end
       end
     end
   end

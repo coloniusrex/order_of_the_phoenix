@@ -1,0 +1,18 @@
+<h1>Order of The Phoenix</h1>
+<h2>By House: <%= @order_of_the_phoenix[:house] %></h2>
+
+<section class='total-members'>
+  <p>Total Members from <%= @order_of_the_phoenix[:house] %>: <%= @order_of_the_phoenix[:wizards].count %></p>
+  <ul class='members-list'>
+    <% @order_of_the_phoenix[:wizards].each do |wizard| %>
+      <li class='member'>Name: <%= wizard['name'] %><br>
+      <% if wizard['role'].present? %>
+        Role: <%= wizard['role'] %><br>
+      <% end %>
+      House: <%= wizard['house'] %><br>
+      <% if wizard['patronus'].present? %>
+        Patronus: <%= wizard['patronus'].capitalize %>
+      <% end %></li><br>
+    <% end %>
+  </ul>
+</section>
