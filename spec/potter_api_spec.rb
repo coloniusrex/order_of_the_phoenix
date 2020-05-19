@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "As a user" do
-  it "I can select a house and see sewarch results for members of the house who are in the order of the pheonix" do
+  it "I can select a house and see search results for members of the house who are in the order of the pheonix" do
     visit '/'
     select "Gryffindor", from: "house"
     click_button 'Search For Members'
